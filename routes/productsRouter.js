@@ -10,7 +10,7 @@ router.get( '/', function(req, res){
 
 router.post('/create', upload.single('image'), IsLoginUser ,CreatePost)
 router.get('/index', IsLoginUser ,AllPost)
-router.post('/edit/:id', IsLoginUser ,EditPost)
+router.post('/edit/:id', upload.single('image'),IsLoginUser ,EditPost)
 router.delete('/delete/:id', IsLoginUser ,deletePost)
 
 
